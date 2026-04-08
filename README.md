@@ -1,2 +1,6 @@
-# Manifest
-The Single Source of Truth for My Digital Workspace
+# Manifest: The Single Source of Truth for My Digital Workspace
+
+这是一个用于管理个人开发环境资产的中心化仓库。它不仅包含了跨平台的配置文件（Dotfiles），还记录了系统重装后的恢复清单、常用软件集以及关键数据的备份指引。
+
+为什么会有这个仓库？
+在经历了一次由于依赖投毒导致的安全事件和系统重装后，我意识到“环境即资产”。这个仓库旨在确保在任何硬件环境下，都能通过标准化的清单和脚本，在最短时间内实现开发环境的高效率、高安全性复原。

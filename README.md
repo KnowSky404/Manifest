@@ -36,3 +36,26 @@ If you are populating the repository for the first time:
 3. Put Windows-specific configs in `dotfiles/windows/`.
 4. Fill `restore/common/` before writing platform-specific reinstall notes.
 5. Fill `data-manifest/` before the next OS reinstall.
+
+## Git Workflow
+
+This repository uses a simple branch-based workflow.
+
+- `main` stores stable and reviewed content.
+- Each change should be made in a dedicated branch.
+- One branch should focus on one topic only, such as `feature/zsh-config` or `feature/ssh-config`.
+- After changes are reviewed, merge them back into `main`.
+
+Typical flow:
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b feature/<topic>
+
+# make changes
+
+git add .
+git commit -m "Add <topic>"
+git push -u origin feature/<topic>
+```

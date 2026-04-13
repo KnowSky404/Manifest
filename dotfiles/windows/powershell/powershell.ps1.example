@@ -1,0 +1,4 @@
+Set-PSReadLineOption -EditMode Windows
+Set-Alias ll Get-ChildItem
+
+$env:EDITOR = "nvim"

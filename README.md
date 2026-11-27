@@ -4,7 +4,7 @@
 
 English | [简体中文](README.zh-CN.md)
 
-Manifest is a centralized repository for personal development environment assets: version-controlled dotfiles, system recovery checklists, software inventories, and backup instructions. Its goal is to make rebuilding a workstation or server predictable, efficient, and secure.
+Manifest is a centralized repository for personal development environment and engineering assets: version-controlled dotfiles, system recovery checklists, software inventories, and backup instructions. Its goal is to make rebuilding a workstation or server predictable, efficient, and secure.
 
 The project was motivated by a dependency supply-chain incident that required a system reinstall. The underlying principle is simple: **the environment itself is an asset**.
 
@@ -18,6 +18,10 @@ The following configurations are currently maintained on the default branch.
 | Tmux | Linux, WSL, macOS | [Configuration](dotfiles/unix/tmux/.tmux.conf) · [Guide](dotfiles/unix/tmux/README.md) | `~/.tmux.conf` | tmux 3.2+, tmux-256color terminfo |
 
 Both configurations are plugin-free. Vim provides a dark theme, cursor highlighting, visual line wrapping, an informative status line, and persistent undo. Tmux provides true-color settings, vi copy mode, mouse support, nested-session compatibility, and a status bar with hostname and local date/time.
+
+## Engineering standards
+
+- [AI-Native Development Workflow](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md) ([简体中文](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md)): reusable risk-based development, CI, review, candidate acceptance, release and agent context rules. Adapt it in each target repository; pin the adopted revision and keep essential rules locally.
 
 ## Quick start
 
@@ -50,6 +54,9 @@ Current structure on `main`:
 
 ```text
 .
+├── docs/
+│   ├── AI_NATIVE_DEVELOPMENT_WORKFLOW.md
+│   └── AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md
 ├── dotfiles/
 │   └── unix/
 │       ├── tmux/
@@ -69,7 +76,7 @@ The original architecture is retained in the [repo-structure branch](https://git
 
 | Directory | Intended purpose |
 | --- | --- |
-| `docs/` | Conventions, architecture, and recovery procedures |
+| `docs/` | Engineering standards (initial workflow available), architecture, and recovery procedures |
 | `dotfiles/shared/` | Cross-platform configuration, such as Git and SSH templates |
 | `dotfiles/unix/` | Linux, WSL, and macOS configuration |
 | `dotfiles/windows/` | Windows configuration |

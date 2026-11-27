@@ -4,7 +4,7 @@
 
 [English](README.md) | 简体中文
 
-Manifest 是用于集中管理个人开发环境资产的仓库，涵盖版本化的 Dotfiles 配置、系统重装后的恢复清单、常用软件清单及数据备份指引。目标是让工作站和服务器的环境重建更加可预测、高效且安全。
+Manifest 是用于集中管理个人开发环境及工程规范资产的仓库，涵盖版本化的 Dotfiles 配置、系统重装后的恢复清单、常用软件清单及数据备份指引。目标是让工作站和服务器的环境重建更加可预测、高效且安全。
 
 项目源于一次依赖供应链安全事件及随后的系统重装。其核心理念是：**环境即资产**。
 
@@ -18,6 +18,10 @@ Manifest 是用于集中管理个人开发环境资产的仓库，涵盖版本�
 | Tmux | Linux、WSL、macOS | [配置文件](dotfiles/unix/tmux/.tmux.conf) · [使用说明](dotfiles/unix/tmux/README.md) | `~/.tmux.conf` | tmux 3.2+、tmux-256color terminfo |
 
 两套配置均不依赖第三方插件。Vim 提供深色主题、光标高亮、视觉软换行、状态栏及持久化撤销。Tmux 提供真彩色设置、Vi 复制模式、鼠标支持、嵌套会话兼容性，以及显示主机名和本地日期时间的状态栏。
+
+## 工程规范
+
+- [AI 原生研发工作流规范](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md)（[English](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md)）：可复用的风险分级、CI、审查、候选验收、发布及代理上下文管理规则。按目标项目适配，记录接入版本，并保留本地关键规范。
 
 ## 快速开始
 
@@ -50,6 +54,9 @@ Manifest 定义目标配置，Git 记录版本历史，Hermes 等外部部署代
 
 ```text
 .
+├── docs/
+│   ├── AI_NATIVE_DEVELOPMENT_WORKFLOW.md
+│   └── AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md
 ├── dotfiles/
 │   └── unix/
 │       ├── tmux/
@@ -69,7 +76,7 @@ Manifest 定义目标配置，Git 记录版本历史，Hermes 等外部部署代
 
 | 目录 | 规划用途 |
 | --- | --- |
-| `docs/` | 项目规范、架构及恢复流程 |
+| `docs/` | 工程规范（已提供研发工作流）、架构及恢复流程 |
 | `dotfiles/shared/` | 跨平台配置，例如 Git 和 SSH 模板 |
 | `dotfiles/unix/` | Linux、WSL、macOS 配置 |
 | `dotfiles/windows/` | Windows 配置 |

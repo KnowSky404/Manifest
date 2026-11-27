@@ -8,36 +8,14 @@ Manifest 是用于集中管理个人开发环境及工程规范资产的仓库�
 
 项目源于一次依赖供应链安全事件及随后的系统重装。其核心理念是：**环境即资产**。
 
-## 已纳入管理的配置
+## 资产索引
 
-以下配置目前已在默认分支维护。
-
-| 工具 | 适用平台 | 仓库文件 | 部署路径 | 环境要求 |
-| --- | --- | --- | --- | --- |
-| Vim | Linux、WSL、macOS / MacVim | [配置文件](dotfiles/unix/vim/.vimrc) · [使用说明](dotfiles/unix/vim/README.md) | `~/.vimrc` | 完整功能版 Vim 9.0+ |
-| Tmux | Linux、WSL、macOS | [配置文件](dotfiles/unix/tmux/.tmux.conf) · [使用说明](dotfiles/unix/tmux/README.md) | `~/.tmux.conf` | tmux 3.2+、tmux-256color terminfo |
-
-两套配置均不依赖第三方插件。Vim 提供深色主题、光标高亮、视觉软换行、状态栏及持久化撤销。Tmux 提供真彩色设置、Vi 复制模式、鼠标支持、嵌套会话兼容性，以及显示主机名和本地日期时间的状态栏。
-
-## 工程规范
-
-- [AI 原生研发工作流规范](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md)（[English](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md)）：可复用的风险分级、CI、审查、候选验收、发布及代理上下文管理规则。按目标项目适配，记录接入版本，并保留本地关键规范。
-
-### 接入现有项目
-
-在目标项目仓库中启动 Codex，使用 Goal 模式提交以下通用提示词：
-
-```text
-/goal
-
-参考 https://github.com/KnowSky404/Manifest/blob/main/docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md 中的完整工程规范，结合当前项目实际情况，系统性整改并优化现有研发 Workflow。
-
-重点减少重复测试、重复 Review、重复部署和上下文消耗，落实风险分级、自动化 CI、审查收敛机制及任务完成标准。
-
-保留现有技术栈、业务逻辑、安全约束及授权边界，记录所采用的 Manifest Commit SHA，直接实施、验证并通过 PR 交付，而非仅提供建议。
-```
-
-该提示词是规范接入入口，不替代完整规范。读取并固定经过审阅的规范版本，将关键规则落地到目标仓库。其他导航见 [Wiki](https://github.com/KnowSky404/Manifest/wiki)。
+| 分类 | 用途 |
+| --- | --- |
+| [配置资产](dotfiles/README.md) | 可移植的开发环境配置与安装指南 |
+| [工程规范](docs/README.md) | 版本化的工程政策与约定 |
+| [提示词库](prompts/README.md) | 可复用的 AI 任务提示词，包括 Codex 工作流接入 |
+| [Wiki](https://github.com/KnowSky404/Manifest/wiki) | 补充知识库与导航 |
 
 ## 快速开始
 
@@ -49,7 +27,7 @@ cd Manifest
 git rev-parse HEAD
 ```
 
-以经过审阅的 `main` 分支作为部署来源。根据 [Vim 使用说明](dotfiles/unix/vim/README.md) 或 [Tmux 使用说明](dotfiles/unix/tmux/README.md)，先验证候选配置、备份现有文件，再为目标用户安装。不要直接覆盖已有配置或符号链接。
+以经过审阅的 `main` 分支作为部署来源。根据对应[配置指南](dotfiles/README.md)，验证候选配置、备份现有文件，再为目标用户安装。不要直接覆盖已有配置或符号链接。
 
 ## 多主机同步
 
@@ -66,21 +44,13 @@ Manifest 定义目标配置，Git 记录版本历史，Hermes 等外部部署代
 
 ## 仓库结构
 
-当前 `main` 分支结构：
+顶层目录结构（具体资产见分类索引）：
 
 ```text
 .
 ├── docs/
-│   ├── AI_NATIVE_DEVELOPMENT_WORKFLOW.md
-│   └── AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md
 ├── dotfiles/
-│   └── unix/
-│       ├── tmux/
-│       │   ├── .tmux.conf
-│       │   └── README.md
-│       └── vim/
-│           ├── .vimrc
-│           └── README.md
+├── prompts/
 ├── LICENSE
 ├── README.md
 └── README.zh-CN.md
@@ -88,11 +58,12 @@ Manifest 定义目标配置，Git 记录版本历史，Hermes 等外部部署代
 
 ## 后续规划
 
-原有项目架构保留在 [repo-structure 分支](https://github.com/KnowSky404/Manifest/tree/repo-structure)。以下为规划中的目录职责，不代表相关功能已在 `main` 实现。
+原有项目架构保留在 [repo-structure 分支](https://github.com/KnowSky404/Manifest/tree/repo-structure)。以下为规划中的目录职责，部分目录已在资产索引中提供。
 
 | 目录 | 规划用途 |
 | --- | --- |
 | `docs/` | 工程规范（已提供研发工作流）、架构及恢复流程 |
+| `prompts/` | 按工具或任务分类的可复用 AI 提示词 |
 | `dotfiles/shared/` | 跨平台配置，例如 Git 和 SSH 模板 |
 | `dotfiles/unix/` | Linux、WSL、macOS 配置 |
 | `dotfiles/windows/` | Windows 配置 |

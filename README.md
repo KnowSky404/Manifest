@@ -8,36 +8,14 @@ Manifest is a centralized repository for personal development environment and en
 
 The project was motivated by a dependency supply-chain incident that required a system reinstall. The underlying principle is simple: **the environment itself is an asset**.
 
-## Available configurations
+## Asset index
 
-The following configurations are currently maintained on the default branch.
-
-| Tool | Platforms | Repository file | Deployment target | Requirements |
-| --- | --- | --- | --- | --- |
-| Vim | Linux, WSL, macOS / MacVim | [Configuration](dotfiles/unix/vim/.vimrc) · [Guide](dotfiles/unix/vim/README.md) | `~/.vimrc` | Full-featured Vim 9.0+ |
-| Tmux | Linux, WSL, macOS | [Configuration](dotfiles/unix/tmux/.tmux.conf) · [Guide](dotfiles/unix/tmux/README.md) | `~/.tmux.conf` | tmux 3.2+, tmux-256color terminfo |
-
-Both configurations are plugin-free. Vim provides a dark theme, cursor highlighting, visual line wrapping, an informative status line, and persistent undo. Tmux provides true-color settings, vi copy mode, mouse support, nested-session compatibility, and a status bar with hostname and local date/time.
-
-## Engineering standards
-
-- [AI-Native Development Workflow](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md) ([简体中文](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md)): reusable risk-based development, CI, review, candidate acceptance, release and agent context rules. Adapt it in each target repository; pin the adopted revision and keep essential rules locally.
-
-### Adopt in an existing project
-
-Open Codex in the target repository and submit this reusable prompt in goal mode:
-
-```text
-/goal
-
-Read the complete engineering standard at https://github.com/KnowSky404/Manifest/blob/main/docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md and adapt the current project's development workflow to it.
-
-Reduce repeated testing, reviews, deployments and context consumption. Implement risk classification, automated CI, bounded review cycles and clear completion criteria.
-
-Preserve the existing stack, business behavior, security constraints and authorization boundaries. Record the adopted Manifest commit SHA, implement and verify the changes, and deliver them through a PR rather than only providing recommendations.
-```
-
-The prompt is an adoption entry point, not the full policy. Read the linked standard, pin the reviewed revision, and keep essential rules in the target repository. For additional navigation, see the [Wiki](https://github.com/KnowSky404/Manifest/wiki).
+| Category | Purpose |
+| --- | --- |
+| [Dotfiles](dotfiles/README.md) | Portable development environment configurations and installation guides |
+| [Engineering standards](docs/README.md) | Versioned policies and engineering conventions |
+| [Prompt library](prompts/README.md) | Reusable AI task prompts, including Codex workflow adoption |
+| [Wiki](https://github.com/KnowSky404/Manifest/wiki) | Supplementary knowledge base and navigation |
 
 ## Quick start
 
@@ -49,7 +27,7 @@ cd Manifest
 git rev-parse HEAD
 ```
 
-Use the reviewed `main` branch as the deployment source. Follow the [Vim guide](dotfiles/unix/vim/README.md) or [Tmux guide](dotfiles/unix/tmux/README.md) to validate the candidate configuration, back up existing files, and install it for the intended user. Do not blindly overwrite existing configurations or symlinks.
+Use the reviewed `main` branch as the deployment source. Follow the relevant [configuration guide](dotfiles/README.md) to validate the candidate, back up existing files, and install for the intended user. Do not blindly overwrite existing configurations or symlinks.
 
 ## Multi-host synchronization
 
@@ -66,21 +44,13 @@ The repository currently provides configuration files and manual deployment guid
 
 ## Repository layout
 
-Current structure on `main`:
+Top-level structure (see category indexes for individual assets):
 
 ```text
 .
 ├── docs/
-│   ├── AI_NATIVE_DEVELOPMENT_WORKFLOW.md
-│   └── AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md
 ├── dotfiles/
-│   └── unix/
-│       ├── tmux/
-│       │   ├── .tmux.conf
-│       │   └── README.md
-│       └── vim/
-│           ├── .vimrc
-│           └── README.md
+├── prompts/
 ├── LICENSE
 ├── README.md
 └── README.zh-CN.md
@@ -88,11 +58,12 @@ Current structure on `main`:
 
 ## Roadmap
 
-The original architecture is retained in the [repo-structure branch](https://github.com/KnowSky404/Manifest/tree/repo-structure). The following areas describe the intended structure, not features already implemented on `main`.
+The original architecture is retained in the [repo-structure branch](https://github.com/KnowSky404/Manifest/tree/repo-structure). The following areas describe the intended structure; some are already available in the asset index.
 
 | Directory | Intended purpose |
 | --- | --- |
 | `docs/` | Engineering standards (initial workflow available), architecture, and recovery procedures |
+| `prompts/` | Reusable AI prompts, organized by tool or task |
 | `dotfiles/shared/` | Cross-platform configuration, such as Git and SSH templates |
 | `dotfiles/unix/` | Linux, WSL, and macOS configuration |
 | `dotfiles/windows/` | Windows configuration |

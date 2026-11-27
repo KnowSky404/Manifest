@@ -23,6 +23,22 @@ Both configurations are plugin-free. Vim provides a dark theme, cursor highlight
 
 - [AI-Native Development Workflow](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md) ([简体中文](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md)): reusable risk-based development, CI, review, candidate acceptance, release and agent context rules. Adapt it in each target repository; pin the adopted revision and keep essential rules locally.
 
+### Adopt in an existing project
+
+Open Codex in the target repository and submit this reusable prompt in goal mode:
+
+```text
+/goal
+
+Read the complete engineering standard at https://github.com/KnowSky404/Manifest/blob/main/docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md and adapt the current project's development workflow to it.
+
+Reduce repeated testing, reviews, deployments and context consumption. Implement risk classification, automated CI, bounded review cycles and clear completion criteria.
+
+Preserve the existing stack, business behavior, security constraints and authorization boundaries. Record the adopted Manifest commit SHA, implement and verify the changes, and deliver them through a PR rather than only providing recommendations.
+```
+
+The prompt is an adoption entry point, not the full policy. Read the linked standard, pin the reviewed revision, and keep essential rules in the target repository. For additional navigation, see the [Wiki](https://github.com/KnowSky404/Manifest/wiki).
+
 ## Quick start
 
 Clone the repository and review the tool-specific guides before installing any configuration:

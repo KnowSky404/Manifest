@@ -23,6 +23,22 @@ Manifest 是用于集中管理个人开发环境及工程规范资产的仓库�
 
 - [AI 原生研发工作流规范](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md)（[English](docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md)）：可复用的风险分级、CI、审查、候选验收、发布及代理上下文管理规则。按目标项目适配，记录接入版本，并保留本地关键规范。
 
+### 接入现有项目
+
+在目标项目仓库中启动 Codex，使用 Goal 模式提交以下通用提示词：
+
+```text
+/goal
+
+参考 https://github.com/KnowSky404/Manifest/blob/main/docs/AI_NATIVE_DEVELOPMENT_WORKFLOW.md 中的完整工程规范，结合当前项目实际情况，系统性整改并优化现有研发 Workflow。
+
+重点减少重复测试、重复 Review、重复部署和上下文消耗，落实风险分级、自动化 CI、审查收敛机制及任务完成标准。
+
+保留现有技术栈、业务逻辑、安全约束及授权边界，记录所采用的 Manifest Commit SHA，直接实施、验证并通过 PR 交付，而非仅提供建议。
+```
+
+该提示词是规范接入入口，不替代完整规范。读取并固定经过审阅的规范版本，将关键规则落地到目标仓库。其他导航见 [Wiki](https://github.com/KnowSky404/Manifest/wiki)。
+
 ## 快速开始
 
 克隆仓库，并在安装任何配置之前阅读对应工具的使用说明：

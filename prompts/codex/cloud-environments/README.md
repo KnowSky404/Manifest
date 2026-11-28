@@ -6,6 +6,8 @@ Choose a profile, select its actual repositories in the Cloud environment picker
 
 Canonical policy / 权威规范: [English](../../../docs/CODEX_CLOUD_ENVIRONMENTS.md) · [简体中文](../../../docs/CODEX_CLOUD_ENVIRONMENTS.zh-CN.md).
 
+Variable settings / 变量配置: [English](../../../docs/CODEX_CLOUD_ENVIRONMENT_VARIABLES.md) · [简体中文](../../../docs/CODEX_CLOUD_ENVIRONMENT_VARIABLES.zh-CN.md).
+
 | Profile | Prompt / 提示词 |
 | --- | --- |
 | `web-dev` | [Open / 打开](web-dev.md) |

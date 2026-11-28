@@ -7,6 +7,7 @@ Formal, versioned engineering policies. Adopt a reviewed commit and keep essenti
 | Standard / 规范 | English | 简体中文 |
 | --- | --- | --- |
 | AI-Native Development Workflow | [Read](AI_NATIVE_DEVELOPMENT_WORKFLOW.md) | [阅读](AI_NATIVE_DEVELOPMENT_WORKFLOW.zh-CN.md) |
+| Codex Cloud Environment Baseline | [Read](CODEX_CLOUD_ENVIRONMENTS.md) | [阅读](CODEX_CLOUD_ENVIRONMENTS.zh-CN.md) |
 
 For copyable adoption prompts, see the [prompt library](../prompts/README.md).
 

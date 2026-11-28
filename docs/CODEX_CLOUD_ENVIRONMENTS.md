@@ -2,7 +2,7 @@
 
 English | [简体中文](CODEX_CLOUD_ENVIRONMENTS.zh-CN.md)
 
-Status: recommended shared baseline · Version: 1.0
+Status: recommended shared baseline · Version: 1.1
 
 This standard defines reusable development environments, not always-on hosts or a native Codex configuration format. The Owner creates and publishes environments in ChatGPT; this repository records desired policy and copyable prompts. Follow the [AI-Native Development Workflow](AI_NATIVE_DEVELOPMENT_WORKFLOW.md) for task branches, risk-based checks, review and release gates. Environment setup is not authorization to modify repositories, merge or deploy.
 
@@ -43,6 +43,10 @@ Markdown/link checks, scripts, skills, workflow and dotfile validation using tem
 6. Review configuration, script/skill contents, repository scope, network, secrets and private visibility; save and let the Owner Publish. Start a fresh task to confirm published state and report discrepancies; a setup-session pass alone is not proof. If a required check cannot run, disclose it and obtain Owner decision before treating the environment as ready.
 7. Update via Edit, retest and Republish; verify in a new task. Existing task state is separate. Preserve important work through Git branches/PRs, not VM persistence. Record sanitized configuration and Manifest SHA, repository versions, tool versions, known limitations and manual steps; store reviewed scripts as public assets only if sanitized and portable.
 
+## Environment variables
+
+Apply the [environment variables and secrets guide](CODEX_CLOUD_ENVIRONMENT_VARIABLES.md) for common defaults, profile-specific values, project-local configuration and credential placement. Audit actual consumers, leave optional credentials unset and include sanitized configuration evidence in acceptance.
+
 ## Security and delivery
 
 - Private environment by default; use package-manager domains plus explicitly justified destinations. Full internet access, new credentials, external side effects and elevated privileges require separate Owner approval. Do not bypass workspace network rules.
@@ -54,6 +58,6 @@ Markdown/link checks, scripts, skills, workflow and dotfile validation using tem
 
 ## Acceptance report
 
-Report profile, selected repositories and SHAs, Manifest SHA, environment resource observations, installed versions, install script/start skill, per-repository verification commands and results, dependency refresh strategy, network allowlist rationale (no secrets), manual actions, unsupported checks, and readiness status (setup validated / blocked / published and fresh-task verified). No claim of publish or live validation without evidence.
+Report profile, selected repositories and SHAs, Manifest SHA, environment resource observations, installed versions, install script/start skill, per-repository verification commands and results, dependency refresh strategy, network allowlist rationale and sanitized variable inventory (scope, applicability, presence; no secret values), manual actions, unsupported checks, and readiness status (setup validated / blocked / published and fresh-task verified). No claim of publish or live validation without evidence.
 
 Official product reference: [Cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environments). Product capabilities and quotas may change; verify current UI/docs rather than encoding account limits here.
